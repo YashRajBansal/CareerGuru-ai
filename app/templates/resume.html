@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import icon,heading,csrf,future_button %}
+{% block breadcrumb %}Resume studio{% endblock %}
+{% block content %}
+{{ heading('A STRONG RESUME NEEDS MORE THAN KEYWORDS.','Show the work behind your skills.','Check fit for a specific career and find skill claims that need better project or experience evidence.') }}
+<div class="future-feature-row">{{ future_button('AI resume feedback and bullet rewriting','AI feedback & rewrites') }}<span class="muted small-text">Career-fit scoring and evidence checks work locally without a model.</span></div>
+<div class="resume-layout">
+<section class="panel"><h3>A more useful resume check.</h3><p class="muted">Choose the career you are aiming for, then upload or paste your resume.</p>
+<form method="post" enctype="multipart/form-data">{{ csrf() }}
+<label for="career-id">Target career</label><select id="career-id" name="career_id" aria-describedby="target-help"><option value="">No target — general quality & evidence only</option>{% for career in careers %}<option value="{{ career.id }}" {{ 'selected' if result and result.get('career_id')==career.id else '' }}>{{ career.title }}</option>{% endfor %}</select><small class="field-hint" id="target-help">The main score changes with the selected career. Presentation quality is shown separately.</small>
+<label class="drop-zone" id="resume-drop" for="resume-file"><span class="feature-icon">{{ icon('file') }}</span><strong id="resume-file-label">Choose a resume or drop it here</strong><span>PDF, DOCX or TXT · Up to 4 MB</span><input type="file" id="resume-file" name="resume" accept=".pdf,.docx,.txt"></label>
+<label for="resume-text">Or paste your resume</label><textarea name="resume_text" id="resume-text" rows="8" maxlength="16000" placeholder="Use clear headings such as Education, Skills, Projects and Experience. Describe what you actually did with each skill."></textarea>
+<div class="help-note">{{ icon('shield') }}<span>Scores and short supporting excerpts are saved to your private review. The original file and full extracted text are not stored or sent to a model. You can delete saved reviews.</span></div>
+<button class="btn primary full" type="submit">Review my resume {{ icon('arrow') }}</button></form></section>
+<aside class="resume-guide"><span class="eyebrow">RELEVANCE + EVIDENCE</span><h2>Does your resume<br>support this career?</h2>
+<div class="guide-item"><span>01</span><div><h4>Fit for the selected field</h4><p>A well-formatted tech resume can still score poorly for civil engineering. Target skills and relevant tasks drive the main score.</p></div></div>
+<div class="guide-item"><span>02</span><div><h4>Skills need supporting work</h4><p>Listing SQL alone earns no evidence credit and incurs a deduction. Describe an actual task, such as queries you wrote and what data they processed.</p></div></div>
+<div class="guide-item"><span>03</span><div><h4>No reward for keyword stuffing</h4><p>Repeated tools, project titles and planned work do not become evidence. Only include genuine work and results you can substantiate.</p></div></div>
+<p class="small-text muted">This is a transparent text-review rubric, not a commercial ATS or a verifier of claims. Scanned PDFs require OCR. Complex layouts or terminology can cause valid evidence to be missed.</p></aside>
+</div>
+{% if error %}<div class="alert error" role="alert">{{ error }}</div>{% endif %}
+{% if result %}<section class="panel resume-results" id="resume-result">{% with report=result %}{% include 'resume_report.html' %}{% endwith %}</section>{% endif %}
+{% if history %}<section class="panel history-panel"><h3>Saved reviews</h3>{% for review in history %}<details class="saved-review"><summary><span>{{ review.filename }}<small class="muted">{{ review.created_at.strftime('%d %b %Y') }}{% if review.result.career %} · {{ review.result.career }}{% endif %}</small></span><span class="badge soft">{{ review.result.score }}/100 · {{ 'legacy quality only' if review.result.get('schema_version',1)<2 else 'career fit' if review.result.get('score_kind')=='career_fit' else 'general quality' }}</span></summary><div class="saved-review-body">{% with report=review.result %}{% include 'resume_report.html' %}{% endwith %}</div><form method="post" action="/resume/{{ review.id }}/delete" data-confirm="Delete this saved resume review?">{{ csrf() }}<button class="btn danger small" type="submit">{{ icon('trash') }} Delete review</button></form></details>{% endfor %}</section>{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import icon %}
+{% block breadcrumb %}Future feature{% endblock %}
+{% block title %}{{ feature }} — Coming soon{% endblock %}
+{% block content %}
+<section class="center-card panel future-page">
+  <span class="feature-icon">{{ icon('lock') }}</span>
+  <p class="eyebrow">COMING IN A FUTURE RELEASE</p>
+  <h1>{{ feature }}</h1>
+  <p>This is a future feature. It is currently locked while we focus on the career tools you can use today.</p>
+  <a class="btn primary" href="/careers">Explore career paths {{ icon('arrow') }}</a>
+  <a class="btn secondary" href="/home">Back to my workspace</a>
+</section>
+{% endblock %}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Career Guru</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/app/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav" style="height: 65px;">
+          <div class="container px-1 px-lg-1">
+              <a class="navbar-brand" href="/home" style="font-weight: 900">CAREER GURU</a>
+              <!-- Added the chatbot and guidance link here -->
+              <a class="nav-link ms-5" href="/chatbot1">Chatbot</a>
+              <a class="nav-link" href="/professional">Professional Guidance</a>
+              <!-- End of added links -->
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menu
+                  <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="{{ url_for('static', filename='images/user-1.jpg') }}" alt="User" width="35" height="35" class="rounded-circle">
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                              <!-- <li><a class="dropdown-item" href="/tasks">Tasks</a></li> -->
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+  
+
+    <main>
+      <div class="container-fluid p-0">
+        <div class="site-content">
+          <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column text-center">
+              <h1 class="site-title" style="font-size: 5rem">Welcome</h1>
+              <p class="site-desc" style="font-size: 2rem">
+                To CAREER GURU. A place where u Unlock Your Potential 🚀🚀
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-1" id="section-1">
+        <div class="container text-center justify-content-center">
+          <h1 class="display-1 mt-5">Features</h1>
+          <h1 class="display-2 mb-5">Of our Chatbot 🤖🤖</h1>
+          <p class="lead">
+            Career Guru is an AI-driven virtual assistant designed to guide
+            individuals in exploring career options, identifying strengths, and
+            achieving professional goals. Through interactive conversations, it
+            assesses users' personalities, interests, and skills to provide
+            personalized recommendations for suitable career paths. It offers
+            insights into job roles, educational opportunities, and skill
+            development resources, helping users make informed decisions about
+            their career aspirations. With features like resume building
+            assistance, interview preparation tips, and job search support, the
+            chatbot empowers users to navigate the complexities of the job
+            market and pursue fulfilling career opportunities with confidence
+            and clarity.
+          </p>
+          <div class="row justify-content-center text-center">
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/responsive.jpeg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Personality Assessment</h4>
+                    <p class="card-text">
+                      Provide personality assessment quizzes or questions to
+                      help users understand their strengths, weaknesses, and
+                      personality traits relevant to career choices
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/ui &ux.png"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Skills Evaluation</h4>
+                    <p class="card-text">
+                      Assess users' skills and competencies to match them with
+                      suitable career paths or suggest skill development
+                      opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/flexible.jpeg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Career Exploration</h4>
+                    <p class="card-text">
+                      Provide information about various career paths, including
+                      job descriptions, required qualifications, salary ranges,
+                      and growth prospects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Three more card layouts -->
+          <div class="row justify-content-center text-center mt-5">
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/card-image1.jpg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Career Coaching Sessions</h4>
+                    <p class="card-text">
+                      Offer virtual career coaching sessions with certified
+                      career coaches or counselors for personalized guidance and
+                      support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/card-image2.jpg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Professional Development Plans</h4>
+                    <p class="card-text">
+                      Assist users in creating personalized professional
+                      development plans, including setting goals, identifying
+                      skill gaps, and tracking progress.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/card-image3.jpg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Interest Assessment</h4>
+                    <p class="card-text">
+                      Offer interest assessment tools to identify areas of
+                      interest and passion that can guide career choices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-2">
+        <div class="container-fluid">
+          <div class="row justify-content-start">
+            <div class="col-md-6">
+              <div class="d-flex flex-column m-4">
+                <h1 class="heading-1 text-dark text-center" style="font-size: 60px;">
+                  About our chatbot
+                </h1>
+                <p class="para text-dark text-center" style="font-size: large"><b>
+                  Introducing our innovative career suggestion chatbot!
+                  Utilizing advanced natural language processing algorithms, our
+                  chatbot engages users in interactive conversations to assess
+                  their skills, interests, and aspirations. By analyzing user
+                  input and comparing it with vast knowledge databases, the
+                  chatbot generates personalized career recommendations tailored
+                  to each individual's unique profile. With intuitive dialogue
+                  flows and insightful guidance, our chatbot empowers users to
+                  explore diverse career paths, make informed decisions, and
+                  pursue fulfilling professional opportunities with confidence.
+                  Experience the future of career guidance today with our
+                  intelligent and intuitive chatbot solution.
+                </p></b>
+                <div class="text-center col-md-9">
+                  <!-- Added text-center class here -->
+                  <a href="#section-3" class="btn btn-outline-light btn-lg" role="button"
+                    >Try it</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-3" id="section-3">
+        <div class="container">
+          <h1 class="heading-1 text-center">Our Services</h1>
+          <hr class="hr-line-1" />
+          <div class="row justify-content-center text-center">
+            <div class="col-md-6">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/chatbot.jpg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Chat with Our Chatbot</h4>
+                    <p class="card-text">
+                      Engage in an interactive and insightful conversation with
+                      our state-of-the-art chatbot, designed to provide you with
+                      quick assistance and valuable information. Whether you're
+                      seeking guidance on career decisions, exploring
+                      educational opportunities, or simply looking for
+                      professional advice, our chatbot is here to assist you
+                      every step of the way. Harnessing the power of
+                      cutting-edge natural language processing technology, our
+                      chatbot ensures personalized and comprehensive support
+                      tailored to your unique needs. Start a conversation today
+                      and unlock a world of possibilities with our innovative
+                      chatbot solution.
+                    </p>
+                    <a href="/chatbot1" class="btn btn-primary m-4 btn-lg"
+                      >Start Chatting</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-group">
+                <div class="card">
+                  <img
+                    src="../static/images/pro.jpg"
+                    alt="image"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">Professional Guidance</h4>
+                    <p class="card-text">
+                      Receive tailored and individualized guidance from our team
+                      of experienced professional counselors, who are dedicated
+                      to helping you map out and navigate your career path with
+                      precision and clarity. Our counselors offer personalized
+                      insights, expert advice, and strategic planning to empower
+                      you in making informed decisions about your professional
+                      journey. Whether you're exploring new career
+                      opportunities, seeking to enhance your skills, or planning
+                      your next steps, our counselors are here to provide the
+                      support and guidance you need to achieve your goals. Start
+                      your journey towards a fulfilling career with our
+                      personalized counseling services today.
+                    </p>
+                    <a href="/professional" class="btn btn-success m-5 btn-lg"
+                      >Get Guidance</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-4 m-5">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-md-5">
+              <img
+                src="../static/images/section-4.jpeg"
+                alt="section-4"
+                width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="col-md-7">
+              <h3 class="heading-1">About Us</h3>
+              <hr class="h-line-1" />
+              <br />
+              <p class="para-1">
+                At Career Guru, our commitment extends beyond merely offering
+                career guidance; we strive to unlock the full potential within
+                each individual, empowering them to navigate their professional
+                journey with confidence and clarity. Our dedication to
+                personalized support stems from a deep understanding of the
+                unique challenges and aspirations that individuals face in
+                today's dynamic job market. Through our innovative chatbot
+                technology, we provide a comprehensive suite of features
+                meticulously crafted to cater to your specific needs, whether
+                you're exploring new career paths, seeking skill development
+                opportunities, or preparing for interviews. Our mission is not
+                just to guide you but to inspire and equip you with the tools
+                and knowledge necessary to thrive in your chosen field. Join us
+                at Career Guru, where your success is our priority, and
+                together, we'll unlock new horizons of professional growth and
+                fulfillment.
+              </p>
+              <div class="d-flex flex-row">
+                <div class="col-md-6">
+                  <div class="d-flex flex-row">
+                    <i class="fas fa-pencil-ruler fa-2x m-2"></i>
+                    <div class="d-flex flex-column">
+                      <h4 class="m-2">Our Mission</h4>
+                      <p class="m-2">
+                        Our mission is to revolutionize career guidance by
+                        harnessing the power of artificial intelligence and
+                        natural language processing. We aim to provide
+                        accessible, personalized, and insightful guidance to
+                        individuals worldwide, helping them make informed
+                        decisions about their career paths and pursue fulfilling
+                        opportunities with confidence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex flex-row">
+                    <i class="far fa-edit fa-2x m-2"></i>
+                    <div class="d-flex flex-column">
+                      <h4 class="m-2">Our Services</h4>
+                      <p class="m-2">
+                        <b>Chat with Our Chatbot:</b> Engage in interactive
+                        conversations with our state-of-the-art chatbot,
+                        designed to provide quick assistance and valuable
+                        information tailored to your unique needs.
+                        <br />
+                        <b>Professional Guidance:</b> Receive tailored guidance
+                        from our team of experienced professional counselors,
+                        dedicated to helping you map out and navigate your
+                        career path with precision and clarity
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="section-5 text-center">
+        <div class="social">
+          <hr class="my-4" />
+          <h5 class="footer-heading">Copyright &copy; Your Website 2023</h5>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ScrollReveal JS -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <script>
+      window.sr = ScrollReveal({ duration: 1000 });
+
+      sr.reveal(".site-content .d-flex");
+      sr.reveal(".section-1 .card");
+      sr.reveal(".section-2 .d-flex");
+      sr.reveal(".section-3 .col-md-4");
+      sr.reveal(".section-4 .col-md-7");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <style>
+    .gradient-custom {
+      /* fallback for old browsers */
+      background: rgb(67, 62, 73);
+
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(
+        to right,
+        rgb(67, 62, 73),
+        rgb(33, 37, 41)
+      );
+
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(67, 62, 73), rgb(33, 37, 41));
+    }
+  </style>
+  <body>
+    <header>
+      <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      id="mainNav"
+    >
+      <div class="container px-4 px-lg-5 my-2">
+        <a class="navbar-brand" href="/" style="font-weight: 900"
+          >CAREER GURU</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="base.html#about">About</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link" href="base.html#projects">Objective</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="base.html#signup">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    <section
+      class="vh-100 gradient-custom d-flex align-items-center justify-content-center"
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <h2 class="fw-bold mb-4 text-uppercase">LOGIN</h2>
+                <p class="text-white-50 mb-5">
+                  Please enter your username and password!
+                </p>
+                <!-- Display error messages -->
+                {% if error %}
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  role="alert"
+                >
+                  {% for message in get_flashed_messages() %} {{ message }} {%
+                  endfor %}
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                {% endif %}
+
+                <form action="/login" method="POST">
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="username">Username</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+
+                  <button
+                    class="btn btn-outline-light btn-lg px-5 btn-success"
+                    type="submit"
+                  >
+                    Sign In
+                  </button>
+                </form>
+
+                <p class="small mb-0 m-5 text-white-50">
+                  Don't have an account?
+                  <a class="text-reset" href="/signup">Register</a> here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="footer bg-black small text-center text-white-50 gradient-custom"
+    >
+      <div class="container px-4 px-lg-5">
+        Copyright &copy; Your Website 2023
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/app/assets/js/scripts.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

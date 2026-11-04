@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CAREER GURU - An AI assistant</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/" style="font-weight: 900"
+          >CAREER GURU</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Objective</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#signup">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+      <div
+        class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center"
+      >
+        <div class="d-flex justify-content-center">
+          <div class="text-center">
+            <h1 class="mx-auto my-0 text-uppercase" style="font-weight: 900">
+              CAREER GURU
+            </h1>
+            <h2
+              class="text-white-50 mx-auto mt-5 mb-5"
+              style="font-size: 24px; font-weight: 700"
+            >
+              Unlock Your Potential: Personalized Career Guidance Awaits! 🚀🚀
+            </h2>
+            <a class="btn btn-primary" href="#about" style="font-weight: 900"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-8">
+            <h2
+              class="text-white mb-lg-5"
+              style="font-weight: 900; font-size: 30px"
+            >
+              Charting Your Career Course with CAREER GURU
+            </h2>
+            <p class="text-white-50" style="font-weight: 900; font-size: 20px">
+              "Embark on a journey of self-discovery and professional excellence
+              with CAREER GURU! 🚀 Charting Your Career Course with CAREER GURU
+              - Where Guidance Meets Ambition. Unlock the secrets to a
+              fulfilling career path through personalized counseling, expert
+              advice, and tailored strategies. We're not just a career
+              counseling site; we're your partners in success, navigating you
+              towards a future brimming with opportunities. Join us and let's
+              sculpt your success story together! 🌟 #CareerGuru #SuccessAwaits"
+            </p>
+            <div class="container mt-5 text-center">
+              <!-- Login Button -->
+              <a href="/login" class="btn btn-lg login-btn">Login</a>
+
+              <!-- Signup Button -->
+              <a href="/signup" class="btn btn-lg signup-btn ms-2">Signup</a>
+            </div>
+          </div>
+        </div>
+        <img
+          class="img-fluid"
+          src="https://mindlerimages.imgix.net/tinyimg/desktop.svg"
+          alt="..."
+        />
+      </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="projects">
+      <div class="container px-4 px-lg-5">
+        <!-- Featured Project Row-->
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+          <div class="col-xl-8 col-lg-7">
+            <img
+              class="img-fluid mb-3 mb-lg-0"
+              src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="..."
+            />
+          </div>
+          <div class="col-xl-4 col-lg-5">
+            <div class="featured-text text-center text-lg-left">
+              <h4 style="font-size: 30px; font-weight: 900">
+                Personalized Career Guidance
+              </h4>
+              <p class="text-black-50 mb-0" style="font-size: 24px">
+                Imagine a 🚀 career counseling chatbot 🤖 designed to deliver a
+                tailored and individualized approach to each user's career
+                journey. This objective focuses on providing guidance that takes
+                into account the unique characteristics, skills, interests, and
+                aspirations of each individual. 🎯
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Project One Row-->
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-left"
+                >
+                  <h4 class="text-white">Skill Assessment 🎯</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Assess and identify the user's skills, strengths, and areas
+                    for improvement to guide career choices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Two Row-->
+        <div class="row gx-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-right"
+                >
+                  <h4 class="text-white">Feedback Mechanism 🔄</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Gather user feedback to improve the chatbot's effectiveness
+                    and enhance the quality of career advice provided.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project third Row-->
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-left"
+                >
+                  <h4 class="text-white">Educational Pathways 🎓</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Guide users in exploring educational pathways, including
+                    degree programs, certifications, and training options.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project fourth-->
+        <div class="row gx-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=2058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-right"
+                >
+                  <h4 class="text-white">Goal Setting 🎯</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Assist users in setting realistic and achievable career
+                    goals based on their aspirations and current circumstances.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project fifth Row-->
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-left"
+                >
+                  <h4 class="text-white">Professional Development 🚀</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Suggest continuous learning opportunities and resources to
+                    enhance skills and stay competitive in the job market.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project sixth-->
+        <div class="row gx-0 justify-content-center">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid"
+              src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="..."
+            />
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-right"
+                >
+                  <h4 class="text-white">Soft Skills Development 🤝</h4>
+                  <p class="mb-0 text-white-50" style="font-size: 24px">
+                    Provide guidance on developing essential soft skills such as
+                    communication, teamwork, and problem-solving.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-envelope text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Email</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">
+                  <a href="mailto:yashrajbansal07@gmail.com">yashrajbansal07@gmail.com</a>
+                </div>                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Phone</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">+91 7506901797</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+          <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-google-plus"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+      
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container px-4 px-lg-5">
+        Copyright &copy; Your Website 2023
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script>
+      /*!
+       * Start Bootstrap - Grayscale v7.0.6 (https://startbootstrap.com/theme/grayscale)
+       * Copyright 2013-2023 Start Bootstrap
+       * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
+       */
+      //
+      // Scripts
+      //
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // Navbar shrink function
+        var navbarShrink = function () {
+          const navbarCollapsible = document.body.querySelector("#mainNav");
+          if (!navbarCollapsible) {
+            return;
+          }
+          if (window.scrollY === 0) {
+            navbarCollapsible.classList.remove("navbar-shrink");
+          } else {
+            navbarCollapsible.classList.add("navbar-shrink");
+          }
+        };
+
+        // Shrink the navbar
+        navbarShrink();
+
+        // Shrink the navbar when page is scrolled
+        document.addEventListener("scroll", navbarShrink);
+
+        // Activate Bootstrap scrollspy on the main nav element
+        const mainNav = document.body.querySelector("#mainNav");
+        if (mainNav) {
+          new bootstrap.ScrollSpy(document.body, {
+            target: "#mainNav",
+            rootMargin: "0px 0px -40%",
+          });
+        }
+
+        // Collapse responsive navbar when toggler is visible
+        const navbarToggler = document.body.querySelector(".navbar-toggler");
+        const responsiveNavItems = [].slice.call(
+          document.querySelectorAll("#navbarResponsive .nav-link")
+        );
+        responsiveNavItems.map(function (responsiveNavItem) {
+          responsiveNavItem.addEventListener("click", () => {
+            if (window.getComputedStyle(navbarToggler).display !== "none") {
+              navbarToggler.click();
+            }
+          });
+        });
+      });
+    </script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

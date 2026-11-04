@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import icon,heading,csrf,future_button %}
+{% block breadcrumb %}My matches{% endblock %}
+{% block content %}
+{{ heading('YOUR INTERESTS. YOUR POSSIBILITIES.','Find a path that feels like you.','Start with the things you enjoy. You can add everyday interests, subjects or skills.') }}
+<section class="matches-first" aria-labelledby="matches-title">
+  <div class="section-heading compact matches-heading">
+    <div><p class="eyebrow">YOUR RESULTS</p><h2 id="matches-title">Your paths to explore</h2></div>
+    <a class="btn secondary small" href="#interest-editor">{{ icon('plus') }} {{ 'Update interests' if interests else 'Add interests' }}</a>
+  </div>
+  {% if ranked %}
+    <p class="muted match-result-summary">{{ ranked|length }} {{ 'path' if ranked|length==1 else 'paths' }} to explore{% if interests %} for <strong>{{ interests }}</strong>{% else %} from your latest interest quiz{% endif %}. These are starting points, not predictions.</p>
+    <div class="career-grid match-results-grid">
+      {% for similarity,career in ranked %}
+      <a class="career-card match-result-card reveal" href="{{ url_for('career_detail',identifier=career.id) }}">
+        <div class="card-top"><span class="career-symbol">{{ icon('compass') }}</span><span class="badge soft">{{ 'Top match' if loop.first else career.cluster }}</span></div>
+        <h3>{{ career.title }}</h3><p>{{ career.description }}</p>
+        {% if match_reasons[career.id] %}<div class="match-reason"><span>Connects with</span><div class="tags">{% for interest in match_reasons[career.id] %}<span>{{ interest }}</span>{% endfor %}</div></div>{% endif %}
+        <div class="card-foot"><span>Explore this path</span>{{ icon('arrow') }}</div>
+      </a>
+      {% endfor %}
+    </div>
+  {% elif interests %}
+    <div class="empty-state panel"><span class="empty-icon">{{ icon('search') }}</span><h3>No close matches yet.</h3><p>Try adding a subject or activity such as coding, drawing or cooking. Our small career library may not cover every interest yet.</p></div>
+  {% else %}
+    <div class="matches-empty panel"><span class="feature-icon">{{ icon('compass') }}</span><div><h3>Your next direction starts with what you enjoy.</h3><p>Add a few interests below, or take the quiz. Your matches will appear here at the top.</p></div><a href="/quiz" class="text-link">Take the interest quiz {{ icon('arrow') }}</a></div>
+  {% endif %}
+</section>
+<section class="panel interest-editor" id="interest-editor" aria-labelledby="interests-title">
+  <div class="interest-editor-heading"><div><p class="eyebrow">KEEP IT SIMPLE</p><h2 id="interests-title">What do you enjoy?</h2><p class="muted">Choose a suggestion or type your own. Separate different interests with commas.</p></div><span class="feature-icon">{{ icon('spark') }}</span></div>
+  <form method="post" id="interest-form">
+    {{ csrf() }}
+    <label for="interests">Your interests & skills</label>
+    <textarea id="interests" name="interests" required maxlength="3000" rows="2" placeholder="cricket, drawing, computers" aria-describedby="interest-help">{{ interests }}</textarea>
+    <small class="field-hint" id="interest-help">One interest is fine too. You can mix hobbies, subjects and skills; put a comma between each one.</small>
+    <div class="interest-suggestions" aria-label="Quick interest suggestions">{% for suggestion in interest_suggestions %}<button type="button" class="interest-chip" data-interest="{{ suggestion }}" aria-pressed="false">{{ icon('plus') }}{{ suggestion }}</button>{% endfor %}</div>
+    <div class="interest-form-footer"><span class="muted small-text">Your typed interests come first. Quiz results can help refine them.</span><button type="submit" class="btn primary">Find my matches {{ icon('arrow') }}</button></div>
+  </form>
+</section>
+<div class="match-bottom-note"><div class="help-note">{{ icon('info') }}<span>We compare each interest with career titles and skills using local matching. Different interests are considered together. A match does not guarantee entry or employment.</span></div>{{ future_button('AI match explanations','AI match explanations') }}</div>
+{% endblock %}
